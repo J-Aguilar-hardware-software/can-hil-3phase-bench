@@ -37,7 +37,7 @@ Ce document synthétise les choix d'architecture logicielle et les règles de co
 ## 3. Mécanismes de Défense & Repli Sécuritaire (EN 50128)
 
 1. **Intégrité bout-en-bout (`Compute_Safety_CRC16`) :**
-   * Polynôme **CRC-16/CCITT-FALSE (`0x1021`)**, valeur initiale **`0xFFFFU`**, calculé sur les **2 octets de poids faible de l'identifiant CAN** suivis des **6 octets utiles de la trame** (liaison cryptographique légère entre l'ID de priorité et la charge utile).
+   * Polynôme **CRC-16/CCITT-FALSE (`0x1021`)**, valeur initiale **`0xFFFFU`**, calculé sur les **2 octets de poids faible de l'identifiant CAN** suivis des **6 octets utiles de la trame** (couplage d'intégrité entre l'ID de priorité et la charge utile pour prévenir les erreurs d'adressage).
    * En cas de pointeur nul (`data == NULL`) ou de longueur invalide (`length > 8U`), la fonction applique un **repli sécuritaire déterministe** en retournant `0xFFFFU`.
 2. **Protection IEEE-754 & Saturation Physique (`Pack_Float_To_Int24_Safe` & `SET_SPEED`) :**
    * Rejet automatique des valeurs flottantes corrompues (`NaN`, `+Inf`, `-Inf`) et des débordements hors de la plage `[-8388.608f ; +8388.607f]` par repli sécurisé à `0UL`.
