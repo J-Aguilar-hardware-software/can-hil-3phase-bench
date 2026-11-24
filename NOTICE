@@ -1,0 +1,42 @@
+================================================================================
+NOTICE - C2000 CAN 2.0A Driver & Safety Protocol (Target Node)
+Copyright (c) 2026 Jorge Aguilar
+================================================================================
+
+1. PROPRIÉTÉ INTELLECTUELLE & LICENCE DU LOGICIEL OUVERT (PHASE 1)
+   Ce dépôt contient l'implémentation du driver applicatif et de la pile
+   protocolaire CAN 2.0A déterministe (500 kbps, trames 8 octets avec
+   Safety_CRC16 et encodage signé int24) développée pour microcontrôleurs
+   Texas Instruments C2000 (TMS320F2800137), ainsi que la documentation
+   d'architecture et d'analyse de conformité MISRA C:2012 / EN 50128.
+
+   Ces éléments originaux (fichiers situés dans src/, README.md et
+   misra_compliance.md) sont distribués sous licence Apache License, Version 2.0
+   (voir le fichier LICENSE à la racine du dépôt).
+
+2. COMPOSANTS TIERS — TEXAS INSTRUMENTS (C2000Ware MotorControl SDK)
+   Les fichiers d'extension de ce dépôt sont conçus pour s'intégrer au projet
+   de référence "Universal Motor Control Lab (Build Level 3)" de Texas
+   Instruments Incorporated.
+   - Aucun fichier source propriétaire complet de Texas Instruments n'est
+     redistribué dans ce dépôt.
+   - L'utilisateur doit obtenir le SDK C2000Ware MotorControl directement auprès
+     de Texas Instruments et respecter les termes de licence associés.
+
+3. COMPOSANTS PROPRIÉTAIRES NON INCLUS DANS LA LICENCE APACHE 2.0 (PHASES 2 & 3)
+   Les briques logicielles complémentaires décrites dans l'architecture globale
+   du banc de validation HIL ne sont pas placées sous licence Apache 2.0 :
+   - CAN Server (STM32 NUCLEO-F446RE) : le code source du coordinateur /
+     passerelle UART-CAN reste propriétaire. Une version compilée d'évaluation
+     ("CAN Server STM32 Lite") pourra être distribuée séparément via GitHub
+     Releases sous contrat de licence binaire spécifique.
+   - Test Host (Suite d'automatisation pytest) : les scripts de validation HIL,
+     séquences de test automatisées et outils d'orchestration restent
+     strictement propriétaires.
+
+4. MENTIONS DE NON-RESPONSABILITÉ MATÉRIELLE (CONTRÔLE MOTEUR)
+   Ce logiciel pilote un variateur de puissance et un moteur brushless
+   (BLDC/PMSM). Conformément aux sections 7 et 8 de l'Apache License 2.0,
+   l'auteur décline toute responsabilité en cas de dommage matériel, électrique
+   ou corporel résultant de l'utilisation ou de l'adaptation de ce code.
+================================================================================

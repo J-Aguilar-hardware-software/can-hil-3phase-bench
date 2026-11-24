@@ -1,0 +1,32 @@
+# Fichiers système (Windows / macOS / Linux)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dossiers et métadonnées Code Composer Studio / Eclipse
+.metadata/
+.launches/
+.settings/
+.ccsproject
+.cproject
+.project
+Debug/
+Release/
+FLASH/
+RAM/
+*.out
+*.map
+*.obj
+*.d
+*.pp
+
+# Configuration locale VS Code
+.vscode/
+
+# Archives temporaires & fichiers privés (Phases 2 & 3)
+*.zip
+*.bin
+*.hex
+test_*.py
+__pycache__/
+.pytest_cache/
